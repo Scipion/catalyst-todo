@@ -1,0 +1,24 @@
+{
+  "name": "catalyst-todo",
+  "version": "1.0.0",
+  "description": "ToDo List App with WebComponents by @github/catalyst",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "author": "Jorge Beltran",
+  "license": "MIT",
+  "dependencies": {
+    "@github/catalyst": "^1.0.2",
+    "@github/jtml": "^0.1.0",
+    "@webcomponents/custom-elements": "^1.4.3",
+    "dom4": "^2.1.6",
+    "mutation-observer": "^1.0.3",
+    "todomvc-app-css": "^2.3.0",
+    "todomvc-common": "^1.0.5"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.1.2"
+  }
+}
