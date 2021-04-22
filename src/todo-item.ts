@@ -14,15 +14,15 @@ class TodoItemElement extends HTMLElement {
         return ['index', 'checked', 'label'];
     }
 
-    attributeChangedCallback(attrName:string, oldVal:string, newVal:string) {
+    attributeChangedCallback(attrName: string, oldVal: string, newVal: string) {
 
-        if(attrName === 'label') {
+        if (attrName === 'label') {
             this.label = newVal;
         }
-        else if(attrName === 'index') {
+        else if (attrName === 'index') {
             this.index = parseInt(newVal);
         }
-        else if(attrName === 'checked') {
+        else if (attrName === 'checked') {
             this.checked = newVal === 'true' ? true : false;
         }
     }
@@ -39,7 +39,7 @@ class TodoItemElement extends HTMLElement {
         this.dispatchEvent(new CustomEvent("checked", {
             detail: {
                 index: this.index,
-                checked: ev.target.checked
+                checked: ev.detail.checked
             }
         }));
     }

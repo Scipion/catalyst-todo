@@ -10,10 +10,10 @@ class TodoInputElement extends HTMLElement {
         this.update();
     }
 
-    handleInputChange(ev: Event) {
-        this.#value = ev.target.value;
+    handleInputChange(ev: KeyboardEvent) {
+        this.#value = this.text.value;
     }
-    
+
     handleOnSubmit(ev: Event) {
         ev.preventDefault();
         if (!this.#value) return;
