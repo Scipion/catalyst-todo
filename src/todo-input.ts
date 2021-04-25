@@ -11,7 +11,7 @@ class TodoInputElement extends HTMLElement {
     }
 
     handleInputChange(ev: Event) {
-        this.#value = ev.target.value;
+        this.#value = (<HTMLInputElement>ev.target).value;
     }
     
     handleOnSubmit(ev: Event) {

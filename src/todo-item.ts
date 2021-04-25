@@ -35,11 +35,11 @@ class TodoItemElement extends HTMLElement {
         this.dispatchEvent(new CustomEvent("labeled", { detail: this.index }));
     }
 
-    handleOnChecked(ev: CustomEvent) {
+    handleOnChecked(ev: Event) {
         this.dispatchEvent(new CustomEvent("checked", {
             detail: {
                 index: this.index,
-                checked: ev.target.checked
+                checked: (<HTMLInputElement>ev.target).checked
             }
         }));
     }
