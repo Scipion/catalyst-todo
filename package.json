@@ -9,7 +9,7 @@
   "author": "Jorge Beltran",
   "license": "MIT",
   "dependencies": {
-    "@github/catalyst": "^1.4.2",
+    "@github/catalyst": "^1.5.0",
     "@github/jtml": "^0.4.1",
     "@webcomponents/custom-elements": "^1.5.0",
     "dom4": "^2.1.6",
