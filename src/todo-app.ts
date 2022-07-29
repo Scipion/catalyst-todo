@@ -1,8 +1,9 @@
 import { controller, target } from '@github/catalyst';
+import TodoListElement from './todo-list';
 
 @controller
 class TodoAppElement extends HTMLElement {
-    @target list: HTMLElement;
+    @target list: TodoListElement;
 
     connectedCallback() {
         this.update();
