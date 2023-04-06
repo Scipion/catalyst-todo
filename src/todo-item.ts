@@ -48,10 +48,10 @@ class TodoItemElement extends HTMLElement {
         this.innerHTML = `
                 <li class="${this.checked ? 'completed' : ''}">
                     <div class="${this.checked ? 'checked' : ''}">
-                        <input class="toggle" type="checkbox" 
+                        <input id="cb-${this.index}" class="toggle" type="checkbox" 
                             ${this.checked ? 'checked' : ''}
                             data-action="change:todo-item#handleOnChecked">
-                        <label>${this.label}</label>
+                        <label for="cb-${this.index}">${this.label}</label>
                         <button class="destroy" data-action="click:todo-item#handleOnRemoved"></button>
                     </div>
                 </li>
