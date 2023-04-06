@@ -3,7 +3,7 @@ import TodoListElement from './todo-list';
 
 @controller
 class TodoAppElement extends HTMLElement {
-    @target list: TodoListElement;
+    @target list: TodoListElement
 
     connectedCallback() {
         this.update();

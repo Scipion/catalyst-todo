@@ -4,23 +4,18 @@ import { html, render } from '@github/jtml';
 @controller
 class TodoInputElement extends HTMLElement {
     @target text: HTMLInputElement;
-    #value = '';
 
     connectedCallback() {
         this.update();
     }
-
-    handleInputChange(ev: Event) {
-        this.#value = (<HTMLInputElement>ev.target).value;
-    }
     
     handleOnSubmit(ev: Event) {
         ev.preventDefault();
-        if (!this.#value) return;
-        this.dispatchEvent(new CustomEvent("customsubmit", { detail: this.#value }));
 
-        this.#value = '';
-        this.text.value = this.#value;
+        if (!this.text.value) return;
+        this.dispatchEvent(new CustomEvent("customsubmit", { detail: this.text.value }));
+
+        this.text.value = '';
     }
 
     update() {
@@ -30,7 +25,6 @@ class TodoInputElement extends HTMLElement {
                     <input
                         class="new-todo"
                         data-target="todo-input.text"
-                        data-action="keyup:todo-input#handleInputChange"
                         type="text"
                         placeholder="What neds to be done?"
                         />
