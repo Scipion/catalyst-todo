@@ -14,41 +14,42 @@ class TodoItemElement extends HTMLElement {
         return ['index', 'checked', 'label'];
     }
 
-    attributeChangedCallback(attrName:string, oldVal:string, newVal:string) {
-
-        if(attrName === 'label') {
+    attributeChangedCallback(attrName: string, oldVal: string, newVal: string) {
+        if (attrName === 'label') {
             this.label = newVal;
-        }
-        else if(attrName === 'index') {
+        } else if (attrName === 'index') {
             this.index = parseInt(newVal);
-        }
-        else if(attrName === 'checked') {
+        } else if (attrName === 'checked') {
             this.checked = newVal === 'true' ? true : false;
         }
     }
 
     handleOnRemoved() {
-        this.dispatchEvent(new CustomEvent("removed", { detail: this.index }));
+        this.dispatchEvent(new CustomEvent('removed', { detail: this.index }));
     }
 
     handleOnLabeled() {
-        this.dispatchEvent(new CustomEvent("labeled", { detail: this.index }));
+        this.dispatchEvent(new CustomEvent('labeled', { detail: this.index }));
     }
 
     handleOnChecked(ev: Event) {
-        this.dispatchEvent(new CustomEvent("checked", {
-            detail: {
-                index: this.index,
-                checked: (<HTMLInputElement>ev.target).checked
-            }
-        }));
+        this.dispatchEvent(
+            new CustomEvent('checked', {
+                detail: {
+                    index: this.index,
+                    checked: (<HTMLInputElement>ev.target).checked,
+                },
+            })
+        );
     }
 
     update() {
         this.innerHTML = `
                 <li class="${this.checked ? 'completed' : ''}">
                     <div class="${this.checked ? 'checked' : ''}">
-                        <input id="cb-${this.index}" class="toggle" type="checkbox" 
+                        <input id="cb-${
+                            this.index
+                        }" class="toggle" type="checkbox" 
                             ${this.checked ? 'checked' : ''}
                             data-action="change:todo-item#handleOnChecked">
                         <label for="cb-${this.index}">${this.label}</label>

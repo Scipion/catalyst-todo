@@ -8,12 +8,14 @@ class TodoInputElement extends HTMLElement {
     connectedCallback() {
         this.update();
     }
-    
+
     handleOnSubmit(ev: Event) {
         ev.preventDefault();
 
         if (!this.text.value) return;
-        this.dispatchEvent(new CustomEvent("customsubmit", { detail: this.text.value }));
+        this.dispatchEvent(
+            new CustomEvent('customsubmit', { detail: this.text.value })
+        );
 
         this.text.value = '';
     }
@@ -27,11 +29,11 @@ class TodoInputElement extends HTMLElement {
                         data-target="todo-input.text"
                         type="text"
                         placeholder="What neds to be done?"
-                        />
+                    />
                 </form>
             `,
             this
-        )
+        );
     }
 }
 
