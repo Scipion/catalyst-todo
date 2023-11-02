@@ -9,5 +9,12 @@ import TodoAppElement from './todo-app';
 import TodoInputElement from './todo-input';
 import TodoListElement from './todo-list';
 import TodoItemElement from './todo-item';
+import TodoFooterElement from './todo-footer';
 
-export { TodoAppElement, TodoInputElement, TodoListElement, TodoItemElement };
+export {
+    TodoAppElement,
+    TodoInputElement,
+    TodoListElement,
+    TodoItemElement,
+    TodoFooterElement,
+};
